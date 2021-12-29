@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import menuItems from "./menuItems";
+import generalMenuItems from "./generalMenuItems";
+import administrationMenuItems from "./administrationMenuItems";
 const Sidebar = () => {
   let location = useLocation();
 
@@ -9,11 +10,12 @@ const Sidebar = () => {
       <aside className="menu column is-2 section">
         <p className="menu-label">General</p>
         <ul className="menu-list">
-          {menuItems.map((item, idx) => (
-            <li>
+          {generalMenuItems.map((item, idx) => (
+            <li key={idx}>
               <Link
                 to={item.to}
-                className={location.pathname == item.to ? "is-active" : ""}
+                key={idx}
+                className={location.pathname === item.to ? "is-active" : ""}
               >
                 {item.name}
               </Link>
@@ -26,17 +28,19 @@ const Sidebar = () => {
             <Link to="#">Team Settings</Link>
           </li>
           <li>
-            <Link to="#">Manage Your Team</Link>
+            <Link to="#">Configuration</Link>
             <ul>
-              <li>
-                <Link to="#">Members</Link>
-              </li>
-              <li>
-                <Link to="#">Plugins</Link>
-              </li>
-              <li>
-                <Link to="#">Add a member</Link>
-              </li>
+              {administrationMenuItems.map((item, idx) => (
+                <li key={idx}>
+                  <Link
+                    to={item.to}
+                    key={idx}
+                    className={location.pathname === item.to ? "is-active" : ""}
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </li>
         </ul>
