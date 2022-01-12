@@ -1,4 +1,4 @@
-const ProductDetailForm = ({ product }) => {
+const ProductDetailForm = ({ product, productRemoveHandle }) => {
   return (
     <>
       <form>
@@ -87,6 +87,14 @@ const ProductDetailForm = ({ product }) => {
                 />
               </div>
             </div>
+          </div>
+          <div className="buttons level-right mx-3">
+            <button
+              onClick={() => productRemoveHandle(product)}
+              className="button is-small is-danger"
+            >
+              Remove
+            </button>
           </div>
         </div>
       </form>

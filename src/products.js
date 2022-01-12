@@ -1,6 +1,6 @@
 const products = [
   {
-    id: "1312231-2312312-31231-2312-312312",
+    id: "1312231-2312312-31231-2312-342312",
     sku: 12,
     name: "Dell Optiplex 940",
     description: "Desktop Computer for administrative users",
@@ -20,7 +20,7 @@ const products = [
     cost: 1900,
   },
   {
-    id: "1312231-2312312-31231-2312-312312",
+    id: "1312231-2312312-31231-2312-312112",
     sku: 12,
     name: "Dell Optiplex 930",
     description: "Desktop Computer for administrative users",
@@ -30,7 +30,7 @@ const products = [
     cost: 1900,
   },
   {
-    id: "1312231-2312312-31231-2312-312312",
+    id: "1312231-2312312-31231-2312-312512",
     sku: 12,
     name: "Dell Optiplex 92",
     description: "Desktop Computer for administrative users",
@@ -50,7 +50,7 @@ const products = [
     cost: 1900,
   },
   {
-    id: "1312231-2312312-31231-2312-312312",
+    id: "1312231-2312312-31231-2312-123456",
     sku: 12,
     name: "Dell Optiplex 920",
     description: "Desktop Computer for administrative users",

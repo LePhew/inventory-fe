@@ -6,11 +6,13 @@ import AddProductModal from "../../components/Modal/AddProductModal";
 import AddItemForm from "../../components/Forms/AddItemForm";
 import ProductDetailForm from "../../components/Forms/ProductDetailForm";
 import ProductDetailModal from "../../components/Modal/ProductDetailModal";
+import Pagination from "../../components/Pagination/Pagination";
 
 const InventoryPage = () => {
   const [addProductModalState, setaddProductModalState] = useState(false);
   const [productDetailModalState, setproductDetailModalState] = useState(false);
   const [productState, setProductState] = useState({});
+  const [toFilter, setToFilter] = useState("");
 
   const toggleAddModal = () => {
     setaddProductModalState(!addProductModalState);
@@ -23,6 +25,10 @@ const InventoryPage = () => {
   const onProductClickHandle = (item) => {
     setProductState(item);
     toggleProductDetailModal();
+  };
+
+  const productRemoveHandle = (item) => {
+    setToFilter(item.id);
   };
 
   return (
@@ -51,45 +57,13 @@ const InventoryPage = () => {
             </tr>
           </thead>
           <tbody>
-            <Products onProductClick={onProductClickHandle} />
+            <Products
+              onProductClick={onProductClickHandle}
+              toFilter={toFilter}
+            />
           </tbody>
         </table>
-        <div>
-          <nav
-            className="pagination is-small "
-            role="navigation"
-            aria-label="pagination"
-          >
-            <a
-              className="pagination-previous is-disabled"
-              title="This is the first page"
-            >
-              Previous
-            </a>
-            <a className="pagination-next">Next page</a>
-            <ul className="pagination-list">
-              <li>
-                <a
-                  className="pagination-link is-current"
-                  aria-label="Page 1"
-                  aria-current="page"
-                >
-                  1
-                </a>
-              </li>
-              <li>
-                <a className="pagination-link" aria-label="Goto page 2">
-                  2
-                </a>
-              </li>
-              <li>
-                <a className="pagination-link" aria-label="Goto page 3">
-                  3
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+        <Pagination />
       </div>
       <AddProductModal
         closeModal={toggleAddModal}
@@ -104,7 +78,10 @@ const InventoryPage = () => {
         modalState={productDetailModalState}
         title="Product Details"
       >
-        <ProductDetailForm product={productState} />
+        <ProductDetailForm
+          product={productState}
+          productRemoveHandle={productRemoveHandle}
+        />
       </ProductDetailModal>
     </>
   );
