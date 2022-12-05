@@ -20,7 +20,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "css-build": "node-sass --omit-source-map-url src/App.scss public/mycss.css",
+    "css-build": "dart-sass --omit-source-map-url src/App.scss public/mycss.css",
     "css-watch": "npm run css-build -- --watch"
   },
   "eslintConfig": {
