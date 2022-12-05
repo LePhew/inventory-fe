@@ -7,7 +7,7 @@ const Header = () => {
         aria-label="main navigation"
       >
         <div className="navbar-brand">
-          <a className="navbar-item">
+          <a href="#" className="navbar-item">
             <h1>Inventory</h1>
           </a>
         </div>
@@ -16,10 +16,10 @@ const Header = () => {
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                <a className="button is-primary">
+                <a href="#" className="button is-primary">
                   <strong>Sign up</strong>
                 </a>
-                <a className="button is-light">Log in</a>
+                <a href="#" className="button is-light">Log in</a>
               </div>
             </div>
           </div>
