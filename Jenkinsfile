@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'npm install'
-                sh 'npm run build'
+                sh 'CI=False npm run build'
             }
         }
     }
